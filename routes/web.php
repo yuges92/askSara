@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/topics', 'WelcomeController@index');
+Route::get('/topics/{topic}', 'WelcomeController@index');
+Route::get('/sections', 'WelcomeController@index');
+Route::get('/sections/{section}', 'WelcomeController@index');
+Route::get('/sections/{section}/questions', 'WelcomeController@index');
+Route::get('/questions/{question}', 'WelcomeController@index');

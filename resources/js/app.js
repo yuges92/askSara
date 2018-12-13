@@ -5,7 +5,14 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+ require('./bootstrap');
+ require('./template/moment.min');
+ require('./template/bootstrapdatetimepicker.min');
+ require('./template/nouislider.min');
+ require('./template/materialkit.min');
+ require('./template/jquery.cookie.min');
+require('./template/bootstrapmaterialdesign');
+
 
 window.Vue = require('vue');
 
@@ -17,7 +24,7 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('home', require('./components/Home.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)

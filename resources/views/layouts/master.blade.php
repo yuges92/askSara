@@ -10,18 +10,17 @@
   <title>{{ config('app.name', 'AskSARA') }}</title>
 
 
-
   <!-- Fonts -->
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   @stack('css')
 </head>
 <body>
-  <div class="loaderDiv">
-    <div class="loader">
-    </div>
-  </div>
 
   <main class="main-body">
     <div id="app">

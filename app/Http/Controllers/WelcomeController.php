@@ -19,8 +19,8 @@ class WelcomeController extends Controller
     // return as array
     $contents =$request->getBody()->getContents();
     $data= json_decode($contents);
-    dd( $data);
-
+    // dd($data->data);
+return view('welcome',compact($data->data));
 
   }
 }

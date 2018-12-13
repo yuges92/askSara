@@ -14,8 +14,6 @@
 
                    <div class="panel-body">
 
-
-
                    </div>
 
                </div>
@@ -36,7 +34,7 @@
 
        mounted() {
 
-       console.log('Component mounted.')
+       console.log('Component mountedssss.')
 
 
        }
