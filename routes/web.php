@@ -13,8 +13,8 @@
 
 Route::get('/', 'WelcomeController@index');
 Route::get('/topics', 'WelcomeController@index');
-Route::get('/topics/{topic}', 'WelcomeController@index');
-Route::get('/sections', 'WelcomeController@index');
-Route::get('/sections/{section}', 'WelcomeController@index');
-Route::get('/sections/{section}/questions', 'WelcomeController@index');
-Route::get('/questions/{question}', 'WelcomeController@index');
+Route::get('/topics/{topic}', 'TopicsController@show');
+Route::get('/sections', 'SectionsController@index');
+Route::get('/sections/{section}', 'SectionsController@index');
+Route::get('/sections/{section}/questions', 'SectionsController@index');
+Route::get('/questionnaire/{questionnaire}', 'QuestionnaireController@index');

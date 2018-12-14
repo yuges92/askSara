@@ -1,59 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.template')
 
 @section('body')
 
   {{-- <home></home> --}}
 
 
-<a id="skip" href="#mainContent" class=" sr-only sr-only-focusable">Skip to Main Content</a>
-
-
-
-<nav class="navbar navbar-color-on-scroll   navbar-expand-lg"  id="sectionsNav" >
-  <div class="container-fluid">
-    <div class="navbar-translate">
-      <a class="navbar-brand logo" href="/"><img src="https://asksara-dev.dlf.org.uk/assets-2/images/asksara.png" alt="DLF AskSARA logo"/></a>
-    </div>
-    <div class="pull-right" >
-      <a href="https://www.justgiving.com/dlf/donate" class="as-donate btn hidden-sm hidden-md as-donate">  Donate </a>
-      <!--        <a data-toggle="modal" href="#myModal" class="btn btn-primary"> <i class="fa fa-file-text-o"></i>  1 </a>-->
-      <a class="report-link" data-toggle="modal" href="#myModal" >  <span class="fa-stack fa-2x has-badge" data-count=" 1">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </div>
-</div>
-</nav>
-
-<div class="container">
-  <div class="row">
-    <div id="myModal" class="modal fade in">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">AskSARA reports</h4>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li> <a href="report.php?topic_id=84">
-                Smell                        </a>
-              </li>
-            </ul>
-            <div class="modal-footer">
-              <div class="btn-group">
-                <button class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-              </div>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dalog -->
-      </div>
-      <!-- /.modal -->
-    </div>
-  </div>
-</div><!--   <div class="container mt-0 breadcrumb-div" >
+<!--   <div class="container mt-0 breadcrumb-div" >
 </div>-->
 <!--  <div class="">
 
@@ -96,7 +48,7 @@ topic
       <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
         <div class="group-wrapper">
           <div class="group-box-img">
-            <a href="choose_topic.php?topic_id=1000" class="inline-link">
+            <a href="/topics/1000" class="inline-link">
               <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1000" class="img-fluid" alt="Your health">
             </a>
           </div>
@@ -105,7 +57,7 @@ topic
           <div class="top-group">
             <h5>Your health</h5>
             <p>Products and ideas on a range of physical and mental health topics</p>
-            <a href="choose_topic.php?topic_id=1000" class="inline-link">Choose a topic</a>
+            <a href="/topics/1000" class="inline-link">Choose a topic</a>
           </div>
         </div>
       </div>
@@ -114,7 +66,7 @@ topic
       <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
         <div class="group-wrapper">
           <div class="group-box-img">
-            <a href="choose_topic.php?topic_id=1001" class="inline-link">
+            <a href="/topics/1000" class="inline-link">
               <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1001.jpg" class="img-fluid" alt="Your home">
             </a>
           </div>
@@ -123,7 +75,7 @@ topic
           <div class="top-group">
             <h5>Your home</h5>
             <p>Products and ideas for a number of household locations</p>
-            <a href="choose_topic.php?topic_id=1001" class="inline-link">Choose a topic</a>
+            <a href="/topics/1000" class="inline-link">Choose a topic</a>
           </div>
         </div>
       </div>
@@ -132,7 +84,7 @@ topic
       <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
         <div class="group-wrapper">
           <div class="group-box-img">
-            <a href="choose_topic.php?topic_id=1019" class="inline-link">
+            <a href="/topics/1000" class="inline-link">
               <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1019.jpg" class="img-fluid" alt="Daily activities">
             </a>
           </div>
@@ -141,7 +93,7 @@ topic
           <div class="top-group">
             <h5>Daily activities</h5>
             <p>Products and ideas which may help with a range of daily activities</p>
-            <a href="choose_topic.php?topic_id=1019" class="inline-link">Choose a topic</a>
+            <a href="topics/1000" class="inline-link">Choose a topic</a>
           </div>
         </div>
       </div>
@@ -408,33 +360,6 @@ FEATURES
 
 
 
-
-
-<footer id="mainFooter">
-  <div class="footer-left">
-    <a class="vertical-logo-container" href="/">
-      <img class="vertical-logo" src="/images/dlfshawtrust.jpg">
-    </a>
-  </div>
-  <div class="footer-right">
-    <ul class="social-nav">
-      <li>Follow Us</li>
-      <li class="icon-bubble"><a href="https://www.facebook.com/dlfuk" target="_blank"><i class="fa fa-facebook"></i><span class="hidden"> Facebook</span></a></li>
-      <li class="icon-bubble"><a href="https://twitter.com/dlfuk" target="_blank"><i class="fa fa-twitter"></i><span class="hidden">Twitter</span></a></li>
-      <li class="icon-bubble"><a href="#" target="_blank"><i class="fa fa-linkedin"></i><span class="hidden">LinkedIn</span></a></li>
-    </ul>
-    <ul class="legal-nav">
-      <li><a href="/page.php?pId=1">About AskSARA</a> </li>
-      <li><a href="/page.php?pId=2">License AskSARA</a> </li>
-      <li><a href="http://www.dlf.org.uk/content/contact-us">Contact us</a> </li>
-      <li><a class="case-studies" href="/choose_topic.php?group_id=1034">Case studies</a>
-        <li><a href='/sitemap.php'>Sitemap</a></li>
-        <li><a href="/info.php?csid=446">User policy</a></li>
-        <li><a href="/info.php?csid=434">Cookie policy</a></li>
-        <li>© 2018 AskSARA</li>
-      </ul>
-    </div>
-  </footer>
 
 @endsection
 

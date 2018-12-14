@@ -34947,3 +34947,7 @@ a.btn_orange, .btn_orange {
 .card, .card .card-body + .card-footer {
   border-radius: 0 !important;
 }
+
+.navbar {
+  z-index: 555;
+}

@@ -10,17 +10,14 @@ class WelcomeController extends Controller
 
   public function index()
   {
-
     $client = new Client();
-
-
     $request = $client->get('https://apidev-asksara.dlf.org.uk/authority');
     // $response = $request->getBody()->getContents();
     // return as array
     $contents =$request->getBody()->getContents();
     $data= json_decode($contents);
     // dd($data->data);
-return view('welcome',compact($data->data));
+    return view('welcome',compact($data->data));
 
   }
 }
