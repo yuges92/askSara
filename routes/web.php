@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::group(['middleware'=>['web']], function (){
 Route::get('/', 'WelcomeController@index');
 Route::get('/topics', 'WelcomeController@index');
 Route::get('/topics/{topic}', 'TopicsController@show');
@@ -18,3 +18,4 @@ Route::get('/sections', 'SectionsController@index');
 Route::get('/sections/{section}', 'SectionsController@index');
 Route::get('/sections/{section}/questions', 'SectionsController@index');
 Route::get('/questionnaire/{questionnaire}', 'QuestionnaireController@index');
+// });
