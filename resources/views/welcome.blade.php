@@ -5,7 +5,7 @@
   {{-- <home></home> --}}
 
 
-<!--   <div class="container mt-0 breadcrumb-div" >
+  <!--   <div class="container mt-0 breadcrumb-div" >
 </div>-->
 <!--  <div class="">
 
@@ -44,61 +44,24 @@ topic
     <!-- Title -->
     <h2>Expert, personalised advice and information at your fingertips</h2>
     <div class="row">
+      @foreach ($mainTopics as $mainTopic)
+
 
       <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
         <div class="group-wrapper">
           <div class="group-box-img">
-            <a href="/topics/1000" class="inline-link">
+            <a href="/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">
               <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1000" class="img-fluid" alt="Your health">
             </a>
           </div>
-
-
           <div class="top-group">
-            <h5>Your health</h5>
-            <p>Products and ideas on a range of physical and mental health topics</p>
-            <a href="/topics/1000" class="inline-link">Choose a topic</a>
+            <h5>{{$mainTopic->name}}</h5>
+            <p>{{$mainTopic->description}}</p>
+            <a href="/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">Choose a topic</a>
           </div>
         </div>
       </div>
-
-
-      <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
-        <div class="group-wrapper">
-          <div class="group-box-img">
-            <a href="/topics/1000" class="inline-link">
-              <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1001.jpg" class="img-fluid" alt="Your home">
-            </a>
-          </div>
-
-
-          <div class="top-group">
-            <h5>Your home</h5>
-            <p>Products and ideas for a number of household locations</p>
-            <a href="/topics/1000" class="inline-link">Choose a topic</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
-        <div class="group-wrapper">
-          <div class="group-box-img">
-            <a href="/topics/1000" class="inline-link">
-              <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1019.jpg" class="img-fluid" alt="Daily activities">
-            </a>
-          </div>
-
-
-          <div class="top-group">
-            <h5>Daily activities</h5>
-            <p>Products and ideas which may help with a range of daily activities</p>
-            <a href="topics/1000" class="inline-link">Choose a topic</a>
-          </div>
-        </div>
-      </div>
-
-
+    @endforeach
 
     </div>
   </div>

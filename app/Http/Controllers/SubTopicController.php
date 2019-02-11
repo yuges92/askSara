@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SectionsController extends Controller
+class SubTopicController extends Controller
 {
     //
 }
