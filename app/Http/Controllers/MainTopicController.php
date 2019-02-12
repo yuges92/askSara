@@ -14,7 +14,7 @@ class MainTopicController extends Controller
   public function show($id)
   {
     $mainTopic=SaraApi::get('v1/mainTopics/'.$id);
-    dd($mainTopic);
+    // dd($mainTopic);
     return view('showSubTopics', compact('mainTopic'));
   }
 }

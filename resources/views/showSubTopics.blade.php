@@ -110,7 +110,6 @@
                   </div>
                 </div>
               </div>
-              {{$subTopic->firstQuestion_id}}
             @endforeach
 
 
@@ -118,9 +117,6 @@
         </div>
       </div>
     </div>
-
-
-
 
 
   </div>
