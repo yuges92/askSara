@@ -13,8 +13,8 @@ class WelcomeController extends Controller
 
 
     $packages=SaraApi::get('v1/packages');
-    $mainTopics=SaraApi::get('v1/mainTopics');
-    dd($packages);
+    $mainTopics=SaraApi::get('v1/mainTopics')->mainTopics;
+    // dd($packages);
     // dd($mainTopics);
     // print_r( $data->name);
     return view('welcome', compact('mainTopics'));

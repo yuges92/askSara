@@ -51,7 +51,7 @@ topic
         <div class="group-wrapper">
           <div class="group-box-img">
             <a href="/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">
-              <img src="https://images-dev.dlf.org.uk/sara4/dynamic/group_images/1000" class="img-fluid" alt="Your health">
+              <img src="https://i1.wp.com/thefrontline.org.uk/wp-content/uploads/2018/10/placeholder.jpg?ssl=1" class="img-fluid" alt="Your health">
             </a>
           </div>
           <div class="top-group">
