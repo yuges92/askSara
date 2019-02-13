@@ -45,13 +45,11 @@ topic
     <h2>Expert, personalised advice and information at your fingertips</h2>
     <div class="row">
       @foreach ($mainTopics as $mainTopic)
-
-
       <div class="col-lg-3 group-box wow fadeInRight" data-wow-duration=".2s" data-wow-delay=".4s">
         <div class="group-wrapper">
           <div class="group-box-img">
             <a href="/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">
-              <img src="https://i1.wp.com/thefrontline.org.uk/wp-content/uploads/2018/10/placeholder.jpg?ssl=1" class="img-fluid" alt="Your health">
+              <img src="{{$mainTopic->filename}}" class="img-fluid" alt="Your health">
             </a>
           </div>
           <div class="top-group">
