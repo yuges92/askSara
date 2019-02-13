@@ -82,12 +82,12 @@ public function getAccessToken()
       $minutes=Carbon::parse($data->data->expires_at->date)->diffInMinutes(Carbon::now());
       Cookie::queue('saraAccessToken', $data->data->accessToken, $minutes);
     }
-
-    return $data->data->accessToken;
+    
   } catch (\Exception $e) {
-    echo $e;
+    // echo $e;
     echo "Unable to retrieve access token";
   }
+  return $data->data->accessToken;
 }
 
 }
