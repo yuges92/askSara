@@ -8,7 +8,10 @@ class MainTopicController extends Controller
 {
   public function index()
   {
-    return 'topics';
+    $mainTopics=SaraApi::get('v1/mainTopics')->mainTopics;
+
+    return view('mainTopics', compact('mainTopics'));
+
   }
 
   public function show($id)

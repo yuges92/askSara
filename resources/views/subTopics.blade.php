@@ -63,8 +63,8 @@
 
               </ol>
 
-              <h1 class="page-title"> {{$mainTopic->name}}</h1>
-              <p class="text-white">{{$mainTopic->description}}</p>
+              <h1 class="page-title"> All Sub Topics</h1>
+              <p class="text-white"></p>
 
             </div>
           </div>
@@ -90,12 +90,14 @@
 
 
             <!--  For Case Studies-->
-            @foreach ($mainTopic->subTopics as $subTopic)
+            @foreach ($subTopics as $subTopic)
 
               <div class="mx-lg-5 mx-auto">
                 <div class="card card-topic" style="width: 17rem;">
 
-                  <a href="/choose_topic.php?group_id=1044&amp;redo"><img class="card-img-top img" style="max-height:12rem;" src="{{$subTopic->image}}" alt=""></a>
+                  <a href="/choose_topic.php?group_id=1044&amp;redo">
+                    <img class="card-img-top img" style="max-height:12rem;" src="{{$subTopic->image}}" alt="">
+                  </a>
                   <div class="card-body row">
                     <h2 class="card-title col-10">{{$subTopic->name}}</h2>
                     <div class="col-2 text-dark mt-2">
@@ -106,7 +108,7 @@
 
                   </div>
                   <div class="card-footer d-flex justify-content-center">
-                    <a href="/subTopics/{{$subTopic->subTopic_id}}" class="btn  btn-info blue " title="Go To questionnaire">Start Questionnaire</a>
+                    <a href="/questions/{{$subTopic->firstQuestion->question_id}}" class="btn  btn-info blue " title="Go To questionnaire">Start Questionnaire</a>
                   </div>
                 </div>
               </div>

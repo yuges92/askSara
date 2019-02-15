@@ -40,23 +40,43 @@ class SaraApi {
       ]
     ]);
 
-    $contents =$response->getBody()->getContents();
     // dd($contents);
     if($response->getStatusCode()==200){
+      $contents =$response->getBody()->getContents();
       $data= json_decode($contents);
+      // dd($response);
       return $data->data;
     }
   } catch (\Exception $e) {
     echo $e;
-    echo "Unable to retrieve access token";
+    echo "Something went wrong";
   }
 
 }
 
 
-public function post($endPoint)
+public function post($endPoint, $formData)
 {
+  $url=$this->apiUrl.$endPoint;
+  try {
+    $response=   $this->client->post($url,
+    [ 'headers' =>[
+      'Authorization'  =>'Bearer '. $this->getAccessToken(),
+      'Accept'=> 'application/json'
+    ],
+    'form_params' =>$formData,
+]);
 
+if($response->getStatusCode()==200){
+  $contents =$response->getBody()->getContents();
+  $data= json_decode($contents);
+  // dd($response);
+  return $data->data;
+}
+} catch (\Exception $e) {
+  dd ($e);
+  echo "Something went wrong";
+}
 }
 
 public function getAccessToken()

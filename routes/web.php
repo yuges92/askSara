@@ -12,10 +12,12 @@
 */
 // Route::group(['middleware'=>['web']], function (){
 Route::get('/', 'WelcomeController@index');
+Route::get('/packages', 'WelcomeController@packages');
 Route::get('/mainTopics', 'MainTopicController@index');
 Route::get('/mainTopics/{topic}', 'MainTopicController@show');
 Route::get('/subTopics', 'SubTopicController@index');
-Route::get('/subTopics/{subTopic}', 'SubTopicController@index');
-Route::get('/subTopics/{subTopic}/questions', 'SubTopicController@index');
-Route::get('/questions/{question}', 'QuestionController@index');
+Route::get('/subTopics/{subTopic}', 'SubTopicController@show')->name('subTopics.show');
+Route::post('/subTopics/{subTopic}', 'SubTopicController@nextQuestion')->name('nextQuestion');
+// Route::get('/questions/{question}', 'QuestionController@show');
+// Route::post('/questions/{question}', 'QuestionController@nextQuestion')->name('nextQuestion');
 // });
