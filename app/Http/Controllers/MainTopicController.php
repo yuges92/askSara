@@ -8,8 +8,9 @@ class MainTopicController extends Controller
 {
   public function index()
   {
-    $mainTopics=SaraApi::get('v1/mainTopics')->mainTopics;
-
+    // $mainTopics=SaraApi::get('v1/mainTopics')->mainTopics;
+    $mainTopics=SaraApi::get('v1/mainTopics')->allMainTopics;
+    // dd($mainTopics);
     return view('mainTopics', compact('mainTopics'));
 
   }

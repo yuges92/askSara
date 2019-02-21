@@ -18,6 +18,9 @@ Route::get('/mainTopics/{topic}', 'MainTopicController@show');
 Route::get('/subTopics', 'SubTopicController@index');
 Route::get('/subTopics/{subTopic}', 'SubTopicController@show')->name('subTopics.show');
 Route::post('/subTopics/{subTopic}', 'SubTopicController@nextQuestion')->name('nextQuestion');
+Route::resource('/reports', 'ReportController');
+// Route::get('/reports/{report}', 'ReportController@show');
+
 // Route::get('/questions/{question}', 'QuestionController@show');
 // Route::post('/questions/{question}', 'QuestionController@nextQuestion')->name('nextQuestion');
 // });

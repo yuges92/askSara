@@ -108,7 +108,7 @@
 
                   </div>
                   <div class="card-footer d-flex justify-content-center">
-                    <a href="/questions/{{$subTopic->firstQuestion->question_id}}" class="btn  btn-info blue " title="Go To questionnaire">Start Questionnaire</a>
+                    <a href="/subTopics/{{$subTopic->subTopic_id}}" class="btn  btn-info blue " title="Go To questionnaire">Start Questionnaire</a>
                   </div>
                 </div>
               </div>

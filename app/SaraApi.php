@@ -15,6 +15,7 @@ class SaraApi {
   private $password;
   private $version;
   private $apiUrl;
+  // private $responseCode=404;
 
   function __construct($username,$password,$apiUrl,$version)
   {
@@ -31,7 +32,6 @@ class SaraApi {
   {
     $url=$this->apiUrl.$endPoint;
     // dd($this->getAccessToken());
-
     try {
       $response=   $this->client->get($url,['headers' =>
       [
@@ -40,17 +40,21 @@ class SaraApi {
       ]
     ]);
 
-    // dd($contents);
     if($response->getStatusCode()==200){
       $contents =$response->getBody()->getContents();
       $data= json_decode($contents);
-      // dd($response);
       return $data->data;
     }
+
   } catch (\Exception $e) {
-    echo $e;
-    echo "Something went wrong";
+    if($e->getCode()==403){
+      return abort(403);
+    }
+    return abort(404);
+    // echo $e;
+    // echo "Something went wrong";
   }
+
 
 }
 
@@ -58,6 +62,8 @@ class SaraApi {
 public function post($endPoint, $formData)
 {
   $url=$this->apiUrl.$endPoint;
+  $responseCode=404;
+
   try {
     $response=   $this->client->post($url,
     [ 'headers' =>[
@@ -65,16 +71,25 @@ public function post($endPoint, $formData)
       'Accept'=> 'application/json'
     ],
     'form_params' =>$formData,
-]);
+  ]);
+  $responseCode=$response->getStatusCode();
+  if($responseCode==200){
+    $contents =$response->getBody()->getContents();
+    $data= json_decode($contents);
+    // dd($response);
+    return $data->data;
+  }
 
-if($response->getStatusCode()==200){
-  $contents =$response->getBody()->getContents();
-  $data= json_decode($contents);
-  // dd($response);
-  return $data->data;
-}
+
 } catch (\Exception $e) {
+
   dd ($e);
+  if($e->getCode()==403){
+    return abort(403);
+  }
+  return abort(404);
+
+
   echo "Something went wrong";
 }
 }
@@ -95,19 +110,28 @@ public function getAccessToken()
         'password'=>$this->password
       ],
     ]);
+    $responseCode=$response->getStatusCode();
 
     $contents =$response->getBody()->getContents();
-    if($response->getStatusCode()==200){
+    if($responseCode==200){
       $data= json_decode($contents);
       $minutes=Carbon::parse($data->data->expires_at->date)->diffInMinutes(Carbon::now());
       Cookie::queue('saraAccessToken', $data->data->accessToken, $minutes);
+      return $data->data->accessToken;
     }
 
-    return $data->data->accessToken;
   } catch (\Exception $e) {
-    echo $e;
-    echo "Unable to retrieve access token";
+
+    if($e->getCode()==403){
+      return abort(403);
+    }
+    return abort(404);
+    // return abort(403);
+    // echo $e;
+    // echo "Unable to retrieve access token";
   }
+
+
 }
 
 }
