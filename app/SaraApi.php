@@ -83,7 +83,7 @@ public function post($endPoint, $formData)
 
 } catch (\Exception $e) {
 
-  dd ($e);
+  // dd ($e);
   if($e->getCode()==403){
     return abort(403);
   }
