@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class SaraApi {
 
   private $client; // Guzzle Instance
-  // private $accessToken;
+  // private $access_token;
   private $username;
   private $password;
   private $version;
@@ -19,7 +19,7 @@ class SaraApi {
 
   function __construct($username,$password,$apiUrl,$version)
   {
-    // $this->accessToken=$accessToken;
+    // $this->access_token=$access_token;
     $this->username=$username;
     $this->password=$password;
     $this->version=$version;
@@ -31,7 +31,7 @@ class SaraApi {
   public function get($endPoint)
   {
     $url=$this->apiUrl.$endPoint;
-    // dd($this->getAccessToken());
+    // dd($this->getaccess_token());
     try {
       $response=   $this->client->get($url,['headers' =>
       [
@@ -47,11 +47,20 @@ class SaraApi {
     }
 
   } catch (\Exception $e) {
+
     if($e->getCode()==403){
       return abort(403);
     }
+
+    if($e->getCode()==401){
+      ;
+      Cookie::queue(Cookie::forget('saraAccessToken'));
+
+      return abort(401);
+    }
+
+
     return abort(404);
-    // echo $e;
     // echo "Something went wrong";
   }
 
@@ -83,9 +92,14 @@ public function post($endPoint, $formData)
 
 } catch (\Exception $e) {
 
-  // dd ($e);
   if($e->getCode()==403){
     return abort(403);
+  }
+
+  if($e->getCode()==401){
+    Cookie::queue(Cookie::forget('saraAccessToken'));
+
+    return abort(401);
   }
   return abort(404);
 
@@ -116,11 +130,12 @@ public function getAccessToken()
     if($responseCode==200){
       $data= json_decode($contents);
       $minutes=Carbon::parse($data->data->expires_at->date)->diffInMinutes(Carbon::now());
-      Cookie::queue('saraAccessToken', $data->data->accessToken, $minutes);
-      return $data->data->accessToken;
+      Cookie::queue('saraAccessToken', $data->data->access_token, $minutes);
+      return $data->data->access_token;
     }
 
   } catch (\Exception $e) {
+    // dd($e);
 
     if($e->getCode()==403){
       return abort(403);

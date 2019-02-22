@@ -12,8 +12,8 @@ class WelcomeController extends Controller
   {
 
     // $mainTopics=SaraApi::get('v1/mainTopics');
-// dd($mainTopics);
     $mainTopics=SaraApi::get('v1/mainTopics')->allMainTopics;
+    // dd($mainTopics);
     // $mainTopics=SaraApi::get('v1/mainTopics')->customMainTopics;
     // dd($packages);
     // dd($mainTopics);
