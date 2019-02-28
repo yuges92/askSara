@@ -25,17 +25,21 @@ class SaraApi {
     $this->version=$version;
     $this->apiUrl=$apiUrl;
     $this->client = new Client();
+
+    // $user='yuges';
+    // $user='yugeswaran';
+
   }
 
 
   public function get($endPoint)
   {
     $url=$this->apiUrl.$endPoint;
-    // dd($this->getaccess_token());
+    $token=$this->getAccessToken();
     try {
       $response=   $this->client->get($url,['headers' =>
       [
-        'Authorization'  =>'Bearer '. $this->getAccessToken(),
+        'Authorization'  =>'Bearer '. $token,
         'Accept'=> 'application/json'
       ]
     ]);
@@ -47,18 +51,18 @@ class SaraApi {
     }
 
   } catch (\Exception $e) {
+    dd($e);
 
     if($e->getCode()==403){
       return abort(403);
     }
 
     if($e->getCode()==401){
-      ;
+
       Cookie::queue(Cookie::forget('saraAccessToken'));
 
       return abort(401);
     }
-
 
     return abort(404);
     // echo "Something went wrong";
@@ -72,11 +76,12 @@ public function post($endPoint, $formData)
 {
   $url=$this->apiUrl.$endPoint;
   $responseCode=404;
+  $token=$this->getAccessToken();
 
   try {
     $response=   $this->client->post($url,
     [ 'headers' =>[
-      'Authorization'  =>'Bearer '. $this->getAccessToken(),
+      'Authorization'  =>'Bearer '. $token,
       'Accept'=> 'application/json'
     ],
     'form_params' =>$formData,
@@ -140,7 +145,7 @@ public function getAccessToken()
     if($e->getCode()==403){
       return abort(403);
     }
-    return abort(404);
+    // return abort(404);
     // return abort(403);
     // echo $e;
     // echo "Unable to retrieve access token";

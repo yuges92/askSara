@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Facades\SaraApi;
+use Cookie;
 
 class SubTopicController extends Controller
 {
@@ -32,9 +33,16 @@ class SubTopicController extends Controller
 
     }
 
+    // $user='yuges';
+    $user=Cookie::get('saraUser');
+    // if(Cookie::has('saraUser')){
+    //   $user=Cookie::get('saraUser');
+    // }else {
+    //   Cookie::queue('saraUser', $user, 15550);
+    // }
+
     $question_id=$request->question_id;
     $answer_id=$request->answer_id;
-    $user=123;
     // dd($request);
     $formData['answer_id']=$answer_id;
     $formData['user']=$user;

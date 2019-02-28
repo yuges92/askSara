@@ -69,22 +69,39 @@
               </div>
 
               <div class="col-sm-8 col-lg-2 mx-auto questions-image">
-                <img class="rounded  h-100" src="{{$question->image}}" alt="">
+                <img class="rounded  h-100" src="{{$question->image}}" alt="">``
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="container-fluid mt-5">
+            <div class="card card-plain mx-auto mt-1  col-lg-6 ">
+              <span class="text-gray card-text text-center mx-auto ">
+                13% completed
+              </span>
+              <div class="d-flex justify-content-center">
+                <div class="text-center col-12 ">
+                  <div class="progress ">
+                    <div class="progress-bar bg-success  active progress-bar-striped" role="progressbar" style="width:13%;" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
             </div>
 
           </div>
-          <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-
-            </div>
-          </div>
         </div>
       </div>
+    </div>
+  </div>
 
 
 
-      <!--
+  <!--
 
-    @endsection
+@endsection

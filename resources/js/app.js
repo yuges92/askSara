@@ -6,7 +6,7 @@
  */
 
  require('./bootstrap');
- require('./template/moment.min');
+ // require('./template/moment.min');
  require('./template/bootstrapdatetimepicker.min');
  require('./template/nouislider.min');
  require('./template/materialkit.min');
@@ -14,7 +14,7 @@
 require('./template/bootstrapmaterialdesign');
 
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -25,7 +25,7 @@ window.Vue = require('vue');
  */
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('home', require('./components/Home.vue'));
+// Vue.component('home', require('./components/Home.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -36,6 +36,6 @@ Vue.component('home', require('./components/Home.vue'));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });

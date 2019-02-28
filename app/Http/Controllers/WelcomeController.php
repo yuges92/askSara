@@ -10,7 +10,6 @@ class WelcomeController extends Controller
 
   public function index(Request $request)
   {
-
     // $mainTopics=SaraApi::get('v1/mainTopics');
     $mainTopics=SaraApi::get('v1/mainTopics')->allMainTopics;
     // dd($mainTopics);

@@ -1,7 +1,7 @@
 .bg-purple {
   background: linear-gradient(to bottom right, #8f3e75, #8b5179);
   color: #ffffff;
-  
+
 }
 
 .bg-purple * {
@@ -146,7 +146,7 @@ h1 {
     font-size: 1.4rem;
     width: 100%;
   }
-  
+
   .page-title {
     font-size: 25px !important;
 }
@@ -156,7 +156,7 @@ h1 {
 .page-header.questionnaire-header {
     height: 170px !important;
 }
-  
+
 }
 
 .pg-height {
@@ -357,7 +357,7 @@ h6 {
 {
     margin-top: 0;
 }
-.how-img 
+.how-img
 {
     text-align: center;
 }
@@ -740,7 +740,7 @@ h3 {
 }
 
 .bg-pic {
-  background: url(/assets/images/medequip/national_banner.png) no-repeat scroll 0% 0% !important;
+  // background: url(/assets/images/medequip/national_banner.png) no-repeat scroll 0% 0% !important;
 }
 
 .info-card {
@@ -891,7 +891,7 @@ tr:hover {
     padding-top: 1rem !important;
     padding-bottom: 2rem !important;
   }
-  
+
   .navbar .navbar-translate {
     width: 80%;
   }
@@ -1160,7 +1160,7 @@ tr:hover {
   padding-top: 5rem;
   color: #3C4858;
   margin-bottom: 0;
-  
+
 }
 
 .landing-report-header {
@@ -1431,7 +1431,7 @@ tr:hover {
     padding: 2rem;
 /*    background: url('/assets-2/images/abstract-258339_1920.png') !important;*/
     background-size: cover;
-  
+
 }
 
 .clients-header h2 {
@@ -1504,7 +1504,7 @@ tr:hover {
     width: 100%;
     border-radius: 0;
     justify-content: center;
-    
+
     height: 60px;
   }
   #share .show-share-btn {
@@ -1541,8 +1541,8 @@ tr:hover {
 
 #share a:hover,
 #share .show-share-btn:hover {
- 
-  
+
+
 }
 
 /* icons */
@@ -1736,7 +1736,7 @@ footer a:focus {
     background:#884E81 !important;
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
-  
+
 }
 .sara-step .fa, i.fa.fa-long-arrow-right.fa-3x.my-auto.arrow-up {
     color: #fff;
@@ -1814,7 +1814,7 @@ h1 {
 #sidebar .sidebar-header {
     padding: 10px 20px;
     background: url(/assets/images/homepage-header.jpg) !important;
-    
+
 }
 
 #sidebar ul.components {
@@ -1922,7 +1922,7 @@ font-size: 50% !important;
     top: 2% !important;
     right: 7% !important;
 }
- 
+
   .as-donate{display:none !important;}
 
 }
@@ -1970,8 +1970,8 @@ p {
 .bg-gray {
     background: #fff;
     color: #000000 !important;
-    
-    width: 97% 
+
+    width: 97%
 }
 
 #disclaimerDiv .card.m-0.mb-3 {
@@ -1985,7 +1985,7 @@ p {
 .px-4.rel-prod {
     background: #eee;
     padding: 22px;
-   
+
 }
 .navbar-nav .btn {
     background: #fff;
@@ -2014,9 +2014,9 @@ i.fa.fa-envelope, i.fa.fa-file-pdf-o, .nav-item .span {
 }
 
 .fixed-top {
- 
+
     background: #884e81;
- 
+
 }
 .page-header.questionnaire-header {
     height: 230px;
@@ -2031,7 +2031,7 @@ i.fa.fa-envelope, i.fa.fa-file-pdf-o, .nav-item .span {
 
 .card [class*="header-"], .card[class*="bg-"] {
     color: #fff;
-   
+
 }
 
 .card.card-plain {
@@ -2133,7 +2133,7 @@ form#questionnaire_form {
 }
 .overlay.open li {
   -webkit-animation: fadeInRight .5s ease forwards;
-        
+
   -webkit-animation-delay: .35s;
           animation-delay: .35s;
 }
@@ -2308,7 +2308,7 @@ p.MsoNormal {
 .btn-white:focus,
 .btn-white:active {
 
- 
+
   border: none;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 /*  transform: translateY(-3px);*/
@@ -2474,13 +2474,13 @@ a {
 }
 
 .carbox {
-  display: block; 
+  display: block;
     margin-bottom: 20px;
     line-height: 1.42857143;
     background-color: #fff;
     border-radius: 2px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
-    transition: box-shadow .25s; 
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    transition: box-shadow .25s;
 }
 .carbox:hover {
   box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -2496,9 +2496,9 @@ a {
 .img-carbox img{
   width: 100%;
   height: 200px;
-  object-fit:cover; 
+  object-fit:cover;
   transition: all .25s ease;
-} 
+}
 .carbox-content {
   padding:15px;
   text-align:left;
@@ -2521,7 +2521,7 @@ a {
   font-weight:600;
   text-transform: uppercase
 }
- Button Orange Css 
+ Button Orange Css
 .margin-b-30 {
     margin-bottom: 30px;
 }
@@ -2573,6 +2573,6 @@ a.btn_orange, .btn_orange {
 
 }
 .card, .card .card-body + .card-footer {
- 
+
     border-radius: 0 !important;
 }
