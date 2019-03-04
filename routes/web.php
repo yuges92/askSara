@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 // Route::group(['middleware'=>['web']], function (){
 Route::get('/', 'WelcomeController@index');
 Route::get('/packages', 'WelcomeController@packages');

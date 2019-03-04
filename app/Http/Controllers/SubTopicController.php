@@ -10,7 +10,7 @@ class SubTopicController extends Controller
   public function index()
   {
     $subTopics=SaraApi::get('v1/subTopics')->subTopics;
-    // dd($subTopics);
+    dd($subTopics);
     return view('subTopics', compact('subTopics'));
 
   }
