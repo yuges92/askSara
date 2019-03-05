@@ -31,17 +31,18 @@
         <div class="container">
           <div class="card bg-white mb30">
           </div>
+
+                
+          {{-- Report Section Header Discliamer --}}
           <div class="row">
             <div class="col-sm-12">
               <div class="card card-plain">
                 <div class="">
                   <button type="button" class="card-header card-header-secondary purple py-0 slide-collapse col-12">
                     <h2 class=" row px-2"><i class="fa fa-chevron-up  ml-auto mr-1 collapse-icon"></i></h2>
-
                   </button>
                 </div>
                 @foreach ($report->headerDisclaimers as $disclaimer)
-
                 <div class="col-sm-12 p-0 mt-5">
                   <div class="">
                     <div class="card card-plain ">
@@ -79,11 +80,11 @@
                 </div>
                 @endforeach
               </div>
-
-
             </div>
-          </div>
+          </div>{{-- Report Section Header Discliamer End --}}
 
+
+          {{-- Report Section Header Idea --}}
           <div class="card card-plain">
             <div class="">
               <button type="button" class="card-header card-header-secondary purple py-0 slide-collapse col-12">
@@ -111,25 +112,25 @@
 
               </div>
             </div>
-            @endforeach
-          </div>
+            @endforeach         
+          </div>{{-- Report Section Header Idea End--}}
 
-
+          {{-- Report Question--}}
           <div class="card">
-            <h1>Question Body</h1>
+            {{-- <h1>Question Body</h1> --}}
             @php
-            $count=1;
+            $count=0;
             @endphp
             @foreach ($report->questions as $question)
-
-            <div class="p-0 mt-5">
+                    <div class="p-0 mt-5">
               <div class="col-sm-12 p-0">
                 <div class="card card-plain m-0">
                   <div class="">
                     <button type="button" class="card-header card-header-primary purple py-0 slide-collapse col-12">
-                      <h2 class="row px-2 text-left" id="readid{{$count++}}">{{$question->question}}<span
-                          class="text-primary">{{$question->answer}}</span> <i
-                          class="fa fa-chevron-up ml-auto mr-1 collapse-icon"></i></h2>
+                      <h2 class="row px-2 text-left" id="readid-{{$count++}}">{{ $count.' '.$question->question}}
+                        <span class="text-primary">{{$question->answer}}</span> 
+                        <i class="fa fa-chevron-up ml-auto mr-1 collapse-icon"></i>
+                      </h2>
 
                     </button>
                   </div>
@@ -140,8 +141,8 @@
 
                       @foreach ($question->disclaimers as $disclaimer)
                       @if ($disclaimer)
-                      <div class="col-sm-12  px-0 " id="disclaimerDiv">
-                        <div class=" ">
+                      <div class=" col-sm-12  px-0 {{ $question->ideas ? 'col-lg-4 pl-lg-2':'' }}" id="disclaimerDiv">
+                        <div class=" mt-2 border border-danger">
                           <div class="card m-0 mb-3">
                             <div class=" p-2 ">
                               <h3 class="title row px-3 my-0 global-disclaimer text-danger">
@@ -177,9 +178,8 @@
                       @endif
 
 
-                    </div>
 
-                    <div class="mt-0 p-0 card card-plain col-sm-12 ">
+                    <div class="mt-0 p-0 card card-plain col-sm-12 {{ $question->disclaimers ? 'col-lg-8':'' }}">
                       <div class="card-body p-0 ">
                           @if ($question->ideas)
                           @foreach ($question->ideas as $idea)
@@ -194,18 +194,24 @@
                                       <img src="{{ $idea->image }}" alt="">
                                     </div>
                                   @endif
-                                  <div class=" p-1">
+                                  <div class="{{ $idea->image ? 'col-lg-10':'' }} p-1">
                                     <div class="text-left px-md-3 p-1">
                                      {!! $idea->description !!}
                                     </div>
                                   </div>
                                 </div>
+                                    @if ($idea->references)
+                                  <div class=' p-3 text-right btn-link'>
+                                    <a rel='popup' href="/references.php?ideaid=">View References and sources of further information</a>
+                                  </div>
+                                  @endif
                                   
                               @endif
                           @endforeach
                             
                         @endif
                   </div>
+                    </div>
                   </div>
                 </div>
 
@@ -248,6 +254,7 @@
               </div>
             </div>
             @endforeach
+      
           </div>
         </div>
       </div>
