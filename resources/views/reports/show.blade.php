@@ -106,7 +106,7 @@
                 @endif
                 <div class=" {{ ($idea->image) ?'col-lg-10': ''}} p-1">
                   <div class="text-left px-md-3">
-                    <?=$idea->description ?>
+                    {!!$idea->description!!}
                   </div>
                 </div>
 
@@ -122,7 +122,7 @@
             $count=0;
             @endphp
             @foreach ($report->questions as $question)
-                    <div class="p-0 mt-5">
+              <div class="p-0 mt-5">
               <div class="col-sm-12 p-0">
                 <div class="card card-plain m-0">
                   <div class="">
@@ -174,7 +174,6 @@
 
                       @endif
                       @endforeach
-
                       @endif
 
 
@@ -205,12 +204,64 @@
                                     <a rel='popup' href="/references.php?ideaid=">View References and sources of further information</a>
                                   </div>
                                   @endif
-                                  
+
+
                               @endif
                           @endforeach
-                            
                         @endif
                   </div>
+
+                  @if ($question->products)
+                  <div class="px-4 rel-prod">
+                    <div class="">
+                      <div class="">
+                        <h4 class="title ">Related Products</h4>
+                      </div>
+                      <div class="row p-0 d-flex justify-content-center justify-content-md-start">
+                        @foreach ($question->products as $product)
+                            @if ($product)
+                            <div class="card mx-2 mt-1 mb-2" style="width: 12rem; height:16rem;">
+                              <img class="card-img-top " style="max-height:8rem;" src="{{ $product->image }}" alt="">
+                              <div class="card-body text-left mx-auto px-2 py-0">
+                                <h5 class="card-title text-dark  py-0 font-14" >{{ $product->name }}</h5>
+                              </div>
+                              <div class="card-footer justify-content-center">
+                                <a href="" class="btn btn-primary btn-round" title="View product" target="_blank">View</a>
+                              </div>
+                            
+                            </div>
+                            @endif
+                        @endforeach
+                      </div>
+                    </div>
+                  </div>
+                  @endif
+
+                  @if ($question->groupProducts)
+                  <div class="px-4 rel-prod">
+                    <div class="">
+                      <div class="">
+                        <h4 class="title ">Related Group Products</h4>
+                      </div>
+                      <div class="row p-0 d-flex justify-content-center justify-content-md-start">
+                        @foreach ($question->groupProducts as $product)
+                            @if ($product)
+                            <div class="card mx-2 mt-1 mb-2" style="width: 12rem; height:16rem;">
+                              <img class="card-img-top " style="max-height:8rem;" src="{{ $product->image }}" alt="">
+                              <div class="card-body text-left mx-auto px-2 py-0">
+                                <h5 class="card-title text-dark  py-0 font-14" >{{ $product->name }}</h5>
+                              </div>
+                              <div class="card-footer justify-content-center">
+                                <a href="" class="btn btn-primary btn-round" title="View product" target="_blank">View</a>
+                              </div>
+                            
+                            </div>
+                            @endif
+                        @endforeach
+                      </div>
+                    </div>
+                  </div>
+                  @endif
                     </div>
                   </div>
                 </div>
@@ -247,7 +298,7 @@
                 @endif
                 <div class=" {{ ($idea->image) ?'col-lg-10': ''}} p-1">
                   <div class="text-left px-md-3">
-                    {{ $idea->description }}
+                    {!! $idea->description !!}
                   </div>
                 </div>
 

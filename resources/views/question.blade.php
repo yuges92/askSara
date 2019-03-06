@@ -17,11 +17,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-caption">
                 <ol class="breadcrumb m-0 p-2 rounded">
-
                   <li class="breadcrumb-item"><a href="/"> Home</a></li>
-
                   <li class="breadcrumb-item"><a href="/choose_topic.php?group_id=1000"> Your health</a></li>
-
                 </ol>
 
                 <h1 class="page-title">{{$subTopic->name}}</h1>
@@ -49,7 +46,7 @@
                         <div class="form-check">
                           <label class="form-check-label text-dark" for="answer_id{{$answer->answer_id}}">
                             <input id="answer_id{{$answer->answer_id}}" class="form-check-input" type="radio" name="answer_id" value="{{$answer->answer_id}}">
-                            {{$answer->description}}<span class="circle" >
+                            {!!$answer->description!!}<span class="circle" >
                               <span class="check"></span>
                             </span>
                           </label>
