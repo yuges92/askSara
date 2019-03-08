@@ -51,7 +51,7 @@ class ReportController extends Controller
       $user=Cookie::get('saraUser');
       $report=SaraApi::get('v1/reports/users/'.$user.'/subTopics/'.$id);
       // $topics=$reports->completedTopics->topics;
-      dd($report);
+      // dd($report);
       return view('reports.show', compact('report'));
 
     }
