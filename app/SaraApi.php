@@ -51,7 +51,7 @@ class SaraApi {
     }
 
   } catch (\Exception $e) {
-    dd($e);
+    // dd($e);
 
     if($e->getCode()==403){
       return abort(403);
@@ -122,22 +122,22 @@ public function getAccessToken()
 
   try {
     $loginUrl=$this->apiUrl.'login';
-
+    
     $response = $this->client->post($loginUrl,[
       'form_params'=> [
         'username'=>$this->username,
         'password'=>$this->password
       ],
-    ]);
-    $responseCode=$response->getStatusCode();
-
-    $contents =$response->getBody()->getContents();
-    if($responseCode==200){
-      $data= json_decode($contents);
-      $minutes=Carbon::parse($data->data->expires_at->date)->diffInMinutes(Carbon::now());
-      Cookie::queue('saraAccessToken', $data->data->access_token, $minutes);
-      return $data->data->access_token;
-    }
+      ]);
+      $responseCode=$response->getStatusCode();
+      
+      $contents =$response->getBody()->getContents();
+      if($responseCode==200){
+        $data= json_decode($contents);
+        // $minutes=Carbon::parse($data->data->expires_at->date)->diffInMinutes(Carbon::now());
+        Cookie::queue('saraAccessToken', $data->data->access_token, 30000);
+        return $data->data->access_token;
+      }
 
   } catch (\Exception $e) {
     // dd($e);

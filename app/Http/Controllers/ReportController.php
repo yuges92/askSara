@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Facades\SaraApi;
 use Cookie;
 use App\Report;
-
+use \Debugbar;
 class ReportController extends Controller
 {
     /**
@@ -51,7 +51,8 @@ class ReportController extends Controller
       $user=Cookie::get('saraUser');
       $report=SaraApi::get('v1/reports/users/'.$user.'/subTopics/'.$id);
       // $topics=$reports->completedTopics->topics;
-      dd($report);
+      // dd($report);
+      Debugbar::info($report);
       return view('reports.show', compact('report'));
 
     }

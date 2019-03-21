@@ -116,11 +116,13 @@
           </div>{{-- Report Section Header Idea End--}}
 
           {{-- Report Question--}}
+          @if (isset($report->questions))
           <div class="card">
             {{-- <h1>Question Body</h1> --}}
             @php
             $count=0;
             @endphp
+                
             @foreach ($report->questions as $question)
               <div class="p-0 mt-5">
               <div class="col-sm-12 p-0">
@@ -141,7 +143,7 @@
 
                       @foreach ($question->disclaimers as $disclaimer)
                       @if ($disclaimer)
-                      <div class=" col-sm-12  px-0 {{ $question->ideas ? 'col-lg-4 pl-lg-2':'' }}" id="disclaimerDiv">
+                      <div class=" col-sm-12  px-0 " id="disclaimerDiv">
                         <div class=" mt-2 border border-danger">
                           <div class="card m-0 mb-3">
                             <div class=" p-2 ">
@@ -180,7 +182,7 @@
 
                     <div class="mt-0 p-0 card card-plain col-sm-12 {{ $question->disclaimers ? 'col-lg-8':'' }}">
                       <div class="card-body p-0 ">
-                          @if ($question->ideas)
+                          @if (isset($question->ideas))
                           @foreach ($question->ideas as $idea)
                               @if ($idea)
                               <div class=" row  m-0 ">
@@ -211,7 +213,7 @@
                         @endif
                   </div>
 
-                  @if ($question->products)
+                  @if (isset($question->products))
                   <div class="px-4 rel-prod">
                     <div class="">
                       <div class="">
@@ -237,7 +239,7 @@
                   </div>
                   @endif
 
-                  @if ($question->groupProducts)
+                  @if (isset($question->groupProducts))
                   <div class="px-4 rel-prod">
                     <div class="">
                       <div class="">
@@ -273,6 +275,7 @@
 
             @endforeach
           </div>
+          @endif
 
 
 

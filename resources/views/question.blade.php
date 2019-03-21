@@ -45,7 +45,7 @@
                       <div class="radio-group" >
                         <div class="form-check">
                           <label class="form-check-label text-dark" for="answer_id{{$answer->answer_id}}">
-                            <input id="answer_id{{$answer->answer_id}}" class="form-check-input" type="radio" name="answer_id" value="{{$answer->answer_id}}">
+                            <input id="answer_id{{$answer->answer_id}}" class="form-check-input" type="radio" name="answer_id" value="{{$answer->answer_id}}" onChange="this.form.submit()">
                             {!!$answer->description!!}<span class="circle" >
                               <span class="check"></span>
                             </span>
