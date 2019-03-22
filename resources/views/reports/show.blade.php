@@ -180,9 +180,9 @@
 
 
 
-                    <div class="mt-0 p-0 card card-plain col-sm-12 {{ $question->disclaimers ? 'col-lg-8':'' }}">
+                    <div class="mt-0 p-0 card card-plain col-sm-12">
                       <div class="card-body p-0 ">
-                          @if (isset($question->ideas))
+                          @if ( !empty($question->ideas))
                           @foreach ($question->ideas as $idea)
                               @if ($idea)
                               <div class=" row  m-0 ">
