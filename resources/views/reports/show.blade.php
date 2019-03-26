@@ -213,7 +213,7 @@
                         @endif
                   </div>
 
-                  @if (isset($question->products))
+                  @if (!empty($question->products))
                   <div class="px-4 rel-prod">
                     <div class="">
                       <div class="">
@@ -239,7 +239,7 @@
                   </div>
                   @endif
 
-                  @if (isset($question->groupProducts))
+                  @if (!empty($question->groupProducts))
                   <div class="px-4 rel-prod">
                     <div class="">
                       <div class="">
