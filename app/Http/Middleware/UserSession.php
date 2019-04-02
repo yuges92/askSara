@@ -17,7 +17,8 @@ class UserSession
   {
 
     if(!Cookie::has('saraUser')){
-      $user=session()->getId();
+      // $user=session()->getId();
+      $user='yugeswaran';
       Cookie::queue('saraUser', $user, 15550);
     }
 

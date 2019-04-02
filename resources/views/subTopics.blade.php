@@ -95,7 +95,7 @@
               <div class="mx-lg-5 mx-auto">
                 <div class="card card-topic" style="width: 17rem;">
 
-                  <a href="/choose_topic.php?group_id=1044&amp;redo">
+                  <a href="/subTopics/{{$subTopic->subTopic_id}}">
                     <img class="card-img-top img" style="max-height:12rem;" src="{{$subTopic->image}}" alt="">
                   </a>
                   <div class="card-body row">

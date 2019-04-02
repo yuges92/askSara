@@ -60,7 +60,7 @@
                   </fieldset>
 
                   <div class=" mb-0 pb-0  div-button-fixed">
-                    <button class="mx-auto mx-md- btn btn-primary" type="submit" name="button">Next <i class="	fa fa-chevron-circle-right"></i></button>
+                    {{-- <button class="mx-auto mx-md- btn btn-primary" type="submit" name="button">Next <i class="	fa fa-chevron-circle-right"></i></button> --}}
                   </div>
                 </form>
               </div>

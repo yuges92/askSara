@@ -52,6 +52,10 @@ class ReportController extends Controller
       $report=SaraApi::get('v1/reports/users/'.$user.'/subTopics/'.$id);
       // $topics=$reports->completedTopics->topics;
       // dd($report);
+      $n = -1.75;
+$whole = (int)($n); 
+      Debugbar::warning($whole);
+
       Debugbar::info($report);
       return view('reports.show', compact('report'));
 
