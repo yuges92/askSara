@@ -48,14 +48,14 @@ topic
       <div class="col-sm-6 col-lg-3 group-box wow fadeInRight w-100 mt-4" data-wow-duration=".2s" data-wow-delay=".4s">
         <div class="group-wrapper">
           <div class="group-box-img">
-            <a href="/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">
+            <a href="{{URL::current()}}/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">
               <img src="{{$mainTopic->filename}}" class="img-fluid" alt="Your health">
             </a>
           </div>
           <div class="top-group p-1">
             <h3>{{$mainTopic->name}}</h3>
             <p>{{$mainTopic->description}}</p>
-            <a href="/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">Choose a topic</a>
+          <a href="{{URL::current()}}/mainTopics/{{$mainTopic->mainTopic_id}}" class="inline-link">Choose a topic</a>
           </div>
         </div>
       </div>

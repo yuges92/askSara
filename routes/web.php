@@ -14,7 +14,9 @@
 
 // Route::group(['middleware'=>['web']], function (){
 Route::get('/', 'WelcomeController@index');
+Route::get('{authority}', 'WelcomeController@authorityPackages');
 Route::get('/packages', 'WelcomeController@packages');
+Route::get('{authority}/packages', 'WelcomeController@authorityPackages');
 Route::get('/mainTopics', 'MainTopicController@index');
 Route::get('/mainTopics/{topic}', 'MainTopicController@show');
 Route::get('/subTopics', 'SubTopicController@index');

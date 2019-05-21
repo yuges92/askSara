@@ -51,7 +51,7 @@ class SaraApi {
     }
 
   } catch (\Exception $e) {
-    // dd($e);
+    dd($e);
 
     if($e->getCode()==403){
       return abort(403);
